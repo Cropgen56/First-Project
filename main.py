@@ -7,10 +7,11 @@ from DatabaseFile import  create_farm1, create_farmer1, create_user, fetch_all_i
 
 app = FastAPI()
 
+
 # Add CORS middleware
 origins = [
-    "http://localhost:3000", 
-    "http://127.0.0.1:3000",
+    "https://elegant-fox-c1d48d.netlify.app/", 
+    "https://first-project-jx9w.onrender.com/",
 ]
 
 app.add_middleware(
@@ -135,9 +136,12 @@ async def update_crop_by_id(crop_id: int, crop: Operations):
 
 @app.delete("/Delete Operation")
 async def crop(crop_id: int):
+    
     success = delete_crop(crop_id) 
 
     if not success:
         raise HTTPException(status_code=404, detail="Crop not found or could not be deleted")
 
     return {"message": "Crop deleted successfully"}
+
+
