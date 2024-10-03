@@ -11,7 +11,7 @@ app = FastAPI()
 # Add CORS middleware
 origins = [
     "https://elegant-fox-c1d48d.netlify.app/", 
-    "https://first-project-jx9w.onrender.com/",
+    "https://first-project-jx9w.onrender.com/login",
 ]
 
 app.add_middleware(
